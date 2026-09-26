@@ -1,0 +1,1 @@
+cp ./sources/* -r /home/$USER/.config/hypr/
