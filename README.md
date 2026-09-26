@@ -1,1 +1,1 @@
-#Liquid Glass style for hyprlock
+# Liquid Glass style for hyprlock
