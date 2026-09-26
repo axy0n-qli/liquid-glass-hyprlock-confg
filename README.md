@@ -46,3 +46,6 @@ To update the configuration to the latest release, run:
 ```bash
 ./update.sh
 ```
+## 📄 License
+
+This project is open-source and released under the **GNU General Public License v3.0 (GPLv3)**. Feel free to modify and distribute it under the terms of the GPLv3 license. See the [LICENSE](LICENSE) file for more details.
