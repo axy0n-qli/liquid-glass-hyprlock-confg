@@ -8,7 +8,7 @@ elif authorisation == "Y" or authorisation == "y":
     print("Installing...")
 
 processus = subprocess.Popen(
-    ["bash", "./scripts/coping-files.sh"],
+    ["bash", "./scripts/install-files.sh"],
     stdout=subprocess.PIPE,
     stderr=subprocess.STDOUT,  
     text=True,
