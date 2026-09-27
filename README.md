@@ -37,7 +37,7 @@ To install the theme, run the following commands in your terminal:
 cd /tmp
 git clone https://github.com/axy0n-qli/liquid-glass-hyprlock-confg.git
 cd liquid-glass-hyprlock-confg
-chmod +x install.sh
+chmod +x *.sh
 ./install.sh
 ```
 
