@@ -3,7 +3,7 @@ import sys
 
 print("Installing required dependencies...")
 
-cmd = ["sudo", "pacman", "-S", "--needed", "playerctl", "hyprlock", "hypridle", "--noconfirm"]
+cmd = ["sudo", "pacman", "-S", "--needed", "playerctl", "hyprlock", "hypridle", "hyprland", "--noconfirm"]
 
 try:
     res = subprocess.run(cmd, check=True)
