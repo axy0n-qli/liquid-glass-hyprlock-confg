@@ -31,7 +31,7 @@ Before installing, ensure you have the following packages available on your syst
 
 ## 🚀 Installation
 
-To install the theme, run the following commands in your terminal:
+To install the theme on Arch Linux, run the following commands in your terminal:
 
 ```bash
 cd /tmp
@@ -39,6 +39,13 @@ git clone https://github.com/axy0n-qli/liquid-glass-hyprlock-confg.git
 cd liquid-glass-hyprlock-confg
 chmod +x *.sh
 ./install.sh
+```
+For other distro user, make sur yout are installed the depends and run:
+```bash
+cd /tmp
+git clone https://github.com/axy0n-qli/liquid-glass-hyprlock-confg.git
+cd liquid-glass-hyprlock-confg
+python3 ./scripts/install.py
 ```
 
 ## 🔄 Updating
