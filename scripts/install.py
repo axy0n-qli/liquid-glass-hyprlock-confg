@@ -1,28 +1,29 @@
 import subprocess
 import sys
 
-authorisation = input("Are you sure you want to continue? (Y/N) ")
-if authorisation == "N" or authorisation == "n":
+answer = input("This will replace hyprlock.conf and hypridle.conf (a timestamped backup is kept). Continue? (Y/N) ")
+if answer.strip().lower() != "y":
     sys.exit(1)
-elif authorisation == "Y" or authorisation == "y":
-    print("Installing...")
 
-processus = subprocess.Popen(
+print("Installing...")
+
+process = subprocess.Popen(
     ["bash", "./scripts/install-files.sh"],
     stdout=subprocess.PIPE,
-    stderr=subprocess.STDOUT,  
+    stderr=subprocess.STDOUT,
     text=True,
-    bufsize=1                  
+    bufsize=1,
 )
 
+for line in process.stdout:
+    print(line, end="")
+    sys.stdout.flush()
 
-for ligne in processus.stdout:
-    print(ligne, end="")
-    sys.stdout.flush()         
+process.wait()
 
-processus.wait()
-
-if processus.returncode == 0:
+if process.returncode == 0:
     print("\nDone! The installation has completed successfully.")
 else:
-    print(f"\nError: The installation failed with code {processus.returncode}")
+    print(f"\nError: The installation failed with code {process.returncode}")
+
+sys.exit(process.returncode)
