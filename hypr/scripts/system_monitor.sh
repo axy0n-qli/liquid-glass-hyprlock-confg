@@ -11,7 +11,7 @@ cpu=0
 [ "$total" -gt 0 ] && cpu=$(( 100 * (total - idle) / total ))
 
 ram=$(awk '/^MemTotal/ {t=$2} /^MemAvailable/ {a=$2} END {printf "%.1fGB / %.1fGB", (t - a) / 1048576, t / 1048576}' /proc/meminfo)
-disk=$(df -h / | awk 'NR==2 {printf "%s / %s (%s)", $3, $2, $5}')
+disk=$(df -h / | awk 'NR==2 {printf "%s/%s (%s)", $3, $2, $5}')
 
 battery=""
 for bat in "$power_supply_dir"/BAT*; do
@@ -37,4 +37,4 @@ for bat in "$power_supply_dir"/BAT*; do
     break
 done
 
-printf '<b>SYSTEM MONITOR</b>\n󰘚 CPU: %s%%\n󰍛 RAM: %s\n󰋊 DISK /: %s%s' "$cpu" "$ram" "$disk" "$battery"
+printf '<b>SYSTEM MONITOR</b>\n󰘚 CPU: %s%%\n󰍛 RAM: %s\n󰋊 DISK: %s%s' "$cpu" "$ram" "$disk" "$battery"
